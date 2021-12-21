@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${person.name} + ' in the shop'"></title>
+</head>
+<body>
+<h1><span th:text="${person.name} + ' in the shop'"></span></h1>
+<h2><span th:text="'Person ' + ${person.name}"></span></h2>
+<h2><span th:text="'Money ' + ${person.money}"></span></h2>
+<table width="50%">
+    <tr>
+        <td  width="30%"><h3>Ware</h3></td>
+        <td  width="20%"><h3>Price</h3></td>
+        <td  width="20%"><h3>Amount</h3></td>
+    </tr>
+    <tr th:each="p : ${products}">
+        <td  width="30%"><a th:href="'/shop/' + ${p.id}" th:text="${p.ware.name}"></a></td>
+        <td  width="20%"><a th:href="'/shop/' + ${p.id}" th:text="${p.ware.price}"></a></td>
+        <td  width="20%"><a th:href="'/shop/' + ${p.id}" th:text="${p.amount}"></a></td>
+    </tr>
+</table>
+<form th:action="@{/shop}" method="post">
+    <button type="submit">Delete person</button>
+</form>
+<br>
+<p><a href="/">Log out</a></p>
+</body>
+</html>
