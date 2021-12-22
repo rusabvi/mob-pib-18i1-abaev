@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="'Grouped by ' + ${filter}"></title>
+</head>
+<body>
+<h1>Grouped operations:</h1>
+<table width="70%">
+    <tr>
+        <td  width="30%"><h3 th:text="${filter}"></h3></td>
+        <td  width="20%"><h3>Money</h3></td>
+        <td  width="20%"><h3>Average money</h3></td>
+    </tr>
+    <tr th:each="gb : ${GB}">
+        <td  width="30%" th:text="${gb[0]}"></td>
+        <td  width="20%" th:text="${gb[1]}"></td>
+        <td  width="20%" th:text="${gb[2]}"></td>
+    </tr>
+</table>
+<br>
+<p><a href="/operations">Back to operations and statistics</a></p>
+<p><a href="/admin">Back to admin page</a></p>
+<p><a href="/">Log out</a></p>
+</body>
+</html>
