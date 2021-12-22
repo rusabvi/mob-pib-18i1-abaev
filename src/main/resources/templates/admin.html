@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin page</title>
+</head>
+<body>
+<h1>Persons:</h1>
+<table width="70%">
+    <tr>
+        <td  width="30%"><h3>Name</h3></td>
+        <td  width="20%"><h3>Money</h3></td>
+    </tr>
+    <tr th:each="p : ${persons}">
+        <td  width="30%" th:text="${p.name}"></td>
+        <td  width="20%" th:text="${p.money}"></td>
+    </tr>
+</table>
+<br>
+<p><a href="/operations">Go to operation list and statistics</a></p>
+<p><a href="/">Log out</a></p>
+</body>
+</html>
