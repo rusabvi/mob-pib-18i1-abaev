@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Operations and statistics</title>
+</head>
+<body>
+<h1>Statistics for all time:</h1>
+<table width="70%">
+    <tr>
+        <td  width="40%" th:text="'All sum of paid money'"></td>
+        <td  width="30%" th:text="${statistics.paidMoney}"></td>
+    </tr>
+    <tr>
+        <td  width="70%" th:text="'Amount of operations'"></td>
+        <td  width="30%" th:text="${statistics.operationAmount}"></td>
+    </tr>
+    <tr>
+        <td  width="70%" th:text="'Amount of buyers'"></td>
+        <td  width="30%" th:text="${statistics.buyerAmount}"></td>
+    </tr>
+    <tr>
+        <td  width="70%" th:text="'Average sum of money in one operation'"></td>
+        <td  width="30%" th:text="${statistics.averageSum}"></td>
+    </tr>
+    <tr>
+        <td  width="70%" th:text="'Average amount of buying by one buyer'"></td>
+        <td  width="30%" th:text="${statistics.averageBuying}"></td>
+    </tr>
+    <tr>
+        <td  width="70%" th:text="'Average sum of paid money spent by one buyer'"></td>
+        <td  width="30%" th:text="${statistics.averageSumSpentByOneBuyer}"></td>
+    </tr>
+</table>
+<br>
+<h1>Operations:</h1>
+<table width="70%">
+    <tr>
+        <td  width="20%"><h3>Ware</h3></td>
+        <td  width="10%"><h3>Amount</h3></td>
+        <td  width="10%"><h3>Money</h3></td>
+        <td  width="20%"><h3>Buyer</h3></td>
+        <td  width="20%"><h3>Date</h3></td>
+        <td  width="20%"><h3>Time</h3></td>
+    </tr>
+    <tr th:each="o : ${operations}">
+        <td  width="20%" th:text="${o.ware.name}"></td>
+        <td  width="10%" th:text="${o.amount}"></td>
+        <td  width="10%" th:text="${o.price}"></td>
+        <td  width="20%" th:text="${o.buyer.name}"></td>
+        <td  width="20%" th:text="${o.date}"></td>
+        <td  width="20%" th:text="${o.time}"></td>
+    </tr>
+</table>
+<br>
+<h1>Group by:</h1>
+<p><a href="/operations/groupedByBuyer">Buyer</a></p>
+<p><a href="/operations/groupedByWare">Ware</a></p>
+<p><a href="/operations/groupedByDate">Date</a></p>
+<br>
+<p><a href="/operations/report">Report</a></p>
+<br>
+<p><a href="/admin">Back to admin page</a></p>
+<p><a href="/">Log out</a></p>
+</body>
+</html>

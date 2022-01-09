@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Report</title>
+</head>
+<body>
+<h1>Report:</h1>
+<table width="70%">
+    <tr>
+        <td  width="12%"><h3>Date</h3></td>
+        <td  width="12%"><h3>Amount of operations</h3></td>
+        <td  width="12%"><h3>Amount of buyers</h3></td>
+        <td  width="12%"><h3>Amount of wares</h3></td>
+        <td  width="12%"><h3>Average money</h3></td>
+        <td  width="12%"><h3>Full money</h3></td>
+        <td  width="12%"><h3>NDFL</h3></td>
+        <td  width="12%" colour="green"><h3>Profit</h3></td>
+    </tr>
+    <tr th:each="RD : ${reportData}">
+        <td  width="12%" th:text="${RD[0]}"></td>
+        <td  width="12%" th:text="${RD[1]}"></td>
+        <td  width="12%" th:text="${RD[2]}"></td>
+        <td  width="12%" th:text="${RD[3]}"></td>
+        <td  width="12%" th:text="${RD[4]}"></td>
+        <td  width="12%" th:text="${RD[5]}"></td>
+        <td  width="12%" th:text="${RD[6]}"></td>
+        <td  width="12%" th:text="${RD[7]}" colour="green"></td>
+    </tr>
+</table>
+<br>
+<p><a href="/operations">Back to operations and statistics</a></p>
+<p><a href="/admin">Back to admin page</a></p>
+<p><a href="/">Log out</a></p>
+</body>
+</html>

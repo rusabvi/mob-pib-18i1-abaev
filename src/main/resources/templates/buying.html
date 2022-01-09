@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="'Buying ' + ${product.ware.name}"></title>
+</head>
+<body>
+<h1>Buying <span th:text="${product.ware.name}"></span>. How much does it need?</h1>
+<form th:action="@{'/shop/' + ${product.id}}" method="post">
+    <label>Amount: <input th:value="${product.amount}" name="amount" type="number" min="0" th:max="${product.amount}"/></label>
+    <button type="submit">Buy</button>
+</form>
+<br>
+<p><a href="/shop">Back to the shop</a></p>
+</body>
+</html>
