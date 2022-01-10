@@ -14,7 +14,7 @@ public interface OperationRepository extends CrudRepository<Operation, Integer> 
             "SELECT p.name, SUM(o.price), round(AVG(o.price), 2) " +
             "FROM Person AS p, Operation As o " +
             "WHERE o.buyer = p.id " +
-            "GROUP BY p.name"
+            "GROUP BY p.id"
     )
     List<Object> selectBuyerNameAndSumOfPriceAndAvgOfPriceByBuyerName();
 
@@ -22,7 +22,7 @@ public interface OperationRepository extends CrudRepository<Operation, Integer> 
             "SELECT w.name, SUM(o.price), round(AVG(o.price), 2) " +
             "FROM Ware AS w, Operation As o " +
             "WHERE o.ware = w.id " +
-            "GROUP BY w.name"
+            "GROUP BY w.id"
     )
     List<Object> selectWareNameAndSumOfPriceAndAvgOfPriceByWareName();
 

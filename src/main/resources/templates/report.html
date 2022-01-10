@@ -6,26 +6,26 @@
 </head>
 <body>
 <h1>Report:</h1>
-<table width="70%">
+<table>
     <tr>
-        <td  width="12%"><h3>Date</h3></td>
-        <td  width="12%"><h3>Amount of operations</h3></td>
-        <td  width="12%"><h3>Amount of buyers</h3></td>
-        <td  width="12%"><h3>Amount of wares</h3></td>
-        <td  width="12%"><h3>Average money</h3></td>
-        <td  width="12%"><h3>Full money</h3></td>
-        <td  width="12%"><h3>NDFL</h3></td>
-        <td  width="12%" colour="green"><h3>Profit</h3></td>
+        <td><h3>Date</h3></td>
+        <td><h3>Amount of operations</h3></td>
+        <td><h3>Amount of buyers</h3></td>
+        <td><h3>Amount of wares</h3></td>
+        <td><h3>Average money</h3></td>
+        <td><h3>Full money</h3></td>
+        <td><h3>NDFL</h3></td>
+        <td><h3>Profit</h3></td>
     </tr>
     <tr th:each="RD : ${reportData}">
-        <td  width="12%" th:text="${RD[0]}"></td>
-        <td  width="12%" th:text="${RD[1]}"></td>
-        <td  width="12%" th:text="${RD[2]}"></td>
-        <td  width="12%" th:text="${RD[3]}"></td>
-        <td  width="12%" th:text="${RD[4]}"></td>
-        <td  width="12%" th:text="${RD[5]}"></td>
-        <td  width="12%" th:text="${RD[6]}"></td>
-        <td  width="12%" th:text="${RD[7]}" colour="green"></td>
+        <td th:text="${RD[0]}"></td>
+        <td th:text="${RD[1]}"></td>
+        <td th:text="${RD[2]}"></td>
+        <td th:text="${RD[3]}"></td>
+        <td th:text="${RD[4]}"></td>
+        <td th:text="${RD[5]}"></td>
+        <td th:text="${RD[6]}"></td>
+        <td th:text="${RD[7]}"></td>
     </tr>
 </table>
 <br>

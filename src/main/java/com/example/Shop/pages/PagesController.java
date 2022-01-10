@@ -115,24 +115,18 @@ public class PagesController {
             @PathVariable("id") int id,
             @RequestParam("amount") int amount
     ) {
-        if (amount == 0
-                || personRepository.findById(activePersonId).getMoney()
-                < productRepository.findById(id).getWare().getPrice()
-                * amount
-                * Shop.getPriceCoefficient(personRepository.findById(activePersonId)))
+        if (!Shop.canBuyerBuyProduct(
+                personRepository.findById(activePersonId),
+                productRepository.findById(id),
+                amount
+        ))
             return "redirect:/shop/{id}";
-        personRepository.findById(activePersonId).subtractMoney(
-                productRepository.findById(id).getWare().getPrice()
-                        * amount
-                        * Shop.getPriceCoefficient(personRepository.findById(activePersonId))
-        );
-        productRepository.findById(id).subtractAmount(amount);
-        operationRepository.save(new Operation(
-                0,
-                productRepository.findById(id).getWare(),
+        Shop.makeDeal(
+                personRepository.findById(activePersonId),
+                productRepository.findById(id),
                 amount,
-                personRepository.findById(activePersonId)
-        ));
+                operationRepository
+        );
         return "redirect:/shop";
     }
 

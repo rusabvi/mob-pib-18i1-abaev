@@ -6,9 +6,10 @@ import lombok.Setter;
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 
 @Entity
-@Table(name = "Operations")
+@Table(name = "operations")
 public class Operation {
     @Getter
     @Setter
@@ -63,7 +64,8 @@ public class Operation {
         this.price = ware.getPrice() * amount * Shop.getPriceCoefficient(buyer);
         this.buyer = buyer;
         this.date = LocalDate.now().toString();
-        this.time = LocalTime.now().toString();
+        this.time = LocalTime.now().format(DateTimeFormatter.ofPattern("HH:mm:ss"));
+                //LocalTime.now().toString();
     }
 
     public Operation() {}

@@ -6,14 +6,14 @@
 </head>
 <body>
 <h1>Persons:</h1>
-<table width="70%">
+<table>
     <tr>
-        <td  width="30%"><h3>Name</h3></td>
-        <td  width="20%"><h3>Money</h3></td>
+        <td><h3>Name</h3></td>
+        <td><h3>Money</h3></td>
     </tr>
     <tr th:each="p : ${persons}">
-        <td  width="30%" th:text="${p.name}"></td>
-        <td  width="20%" th:text="${p.money}"></td>
+        <td th:text="${p.name}"></td>
+        <td th:text="${p.money}"></td>
     </tr>
 </table>
 <br>

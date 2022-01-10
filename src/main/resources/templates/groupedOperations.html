@@ -6,16 +6,16 @@
 </head>
 <body>
 <h1>Grouped operations:</h1>
-<table width="70%">
+<table>
     <tr>
-        <td  width="30%"><h3 th:text="${filter}"></h3></td>
-        <td  width="20%"><h3>Money</h3></td>
-        <td  width="20%"><h3>Average money</h3></td>
+        <td><h3 th:text="${filter}"></h3></td>
+        <td><h3>Money</h3></td>
+        <td><h3>Average money</h3></td>
     </tr>
     <tr th:each="gb : ${GB}">
-        <td  width="30%" th:text="${gb[0]}"></td>
-        <td  width="20%" th:text="${gb[1]}"></td>
-        <td  width="20%" th:text="${gb[2]}"></td>
+        <td th:text="${gb[0]}"></td>
+        <td th:text="${gb[1]}"></td>
+        <td th:text="${gb[2]}"></td>
     </tr>
 </table>
 <br>
